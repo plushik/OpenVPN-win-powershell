@@ -1,11 +1,11 @@
-$OutputFile = "C:\Users\plushik\OpenVPN\tiktokfresh.ovpn"
+$OutputFile = "C:\Users\YOU\OpenVPN\tiktokfresh.ovpn"
 
 $BaseConfig = @"
 client
 dev tun
 proto udp
-remote nl1.vpnjantit.com 1194
-remote 195.123.216.159 1194
+# remote nl1.vpnjantit.com 1194
+# remote 195.123.216.159 1194
 dhcp-option DNS 8.8.8.8
 --data-ciphers AES-128-CBC
 auth SHA1
@@ -64,3 +64,4 @@ $FullConfig = $BaseConfig + "`r`n# TikTok routes`r`n" + ($Routes -join "`r`n")
 Set-Content -Path $OutputFile -Value $FullConfig -Encoding ASCII
 
 Write-Host "File generated: $OutputFile"
+
